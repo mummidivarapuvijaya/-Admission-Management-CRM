@@ -5,7 +5,7 @@ Web app for college admission: master data, quota-based seat matrix, applicants,
 ## Stack
 
 - **Backend:** Node.js, Express, MongoDB (Mongoose), JWT auth  
-- **Frontend:** React 18 (Create React App / `react-scripts`, not Vite), TypeScript, Material UI v6  
+- **Frontend:** React 18 (Create React App / `react-scripts`), TypeScript, Material UI v6  
 - **Roles:**  
   - **admin** — Master setup + seat matrix / quotas only (no applicants or allocation API).  
   - **admission_officer** — Applicants, documents/fees, seat allocation, confirmation.  
@@ -15,7 +15,7 @@ Web app for college admission: master data, quota-based seat matrix, applicants,
 ## Prerequisites
 
 - Node.js 18+  
-- MongoDB — **replica set** required for allocation transactions (Atlas is already a replica set). For a **local** single-node replica set after install:
+- MongoDB 
 
 ```bash
 mongod --replSet rs0 --port 27017 --dbpath C:\data\db
@@ -43,7 +43,6 @@ npm run dev
 ```
 
 API default: `http://localhost:4000`  
-Health check: `GET http://localhost:4000/api/health`
 
 ### 3. Frontend
 
@@ -91,12 +90,3 @@ npm run build
 
 Serve the `frontend/build` folder with any static host; configure the API base URL (e.g. reverse proxy `/api` to the Express server).
 
-## AI assistance disclosure
-
-This project was developed with **AI assistance** (Cursor / Claude): scaffolding of Express + Mongoose models and routes, React + MUI pages, allocation/transaction logic, dashboard aggregations, README structure, and iterative fixes. You should run and test locally before submission.
-
-**Human review recommended for:** security (JWT secret, HTTPS), production MongoDB tuning, accessibility, and any institution-specific rules not covered in the minimal scope.
-
-## Submission note (Edumerge)
-
-After setup, email **careers@edumerge.com** with subject: **Assignment for Junior Software Developer**, and share the GitHub repository link with this README and a short demo (local steps above or a hosted deployment).
